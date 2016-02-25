@@ -635,7 +635,7 @@ runApp <- function(appDir=getwd(),
     # If we (think we) succeed, save the value as .globals$lastPort,
     # and try that first next time the user wants a random port.
 
-    for (i in 1:20) {
+    #for (i in 1:20) {
       if (!is.null(.globals$lastPort)) {
         port <- .globals$lastPort
         .globals$lastPort <- NULL
@@ -652,7 +652,7 @@ runApp <- function(appDir=getwd(),
         .globals$lastPort <- port
         break
       }
-    }
+    #}
   }
 
   appParts <- as.shiny.appobj(appDir)
