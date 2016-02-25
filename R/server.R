@@ -439,7 +439,7 @@ startApp <- function(appObj, port, host, quiet) {
 
   if (is.numeric(port) || is.integer(port)) {
     if (!quiet) {
-      message('\n', 'Listening on http://', host, ':', port)
+      message('\n', 'Listening on http://', host, ':', 12345)
     }
     return(startServer(host, port, handlerManager$createHttpuvApp()))
   } else if (is.character(port)) {
