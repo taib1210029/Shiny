@@ -555,7 +555,7 @@ serviceApp <- function() {
 #' }
 #' @export
 runApp <- function(appDir=getwd(),
-                   port=9999,
+                   port=32964,
                    launch.browser=getOption('shiny.launch.browser',
                                             interactive()),
                    host=getOption('shiny.host', '127.0.0.1'),
