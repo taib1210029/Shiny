@@ -650,7 +650,7 @@ runApp <- function(appDir=getwd(),
       if (!inherits(tmp, 'try-error')) {
         stopServer(tmp)
         .globals$lastPort <- port
-        break
+        #break
       }
     #}
   }
