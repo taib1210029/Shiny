@@ -432,19 +432,19 @@ removeSubApp <- function(path) {
   handlerManager$removeWSHandler(path)
 }
 
-startApp <- function(appObj, port = 12345, host, quiet) {
+startApp <- function(appObj, port, host, quiet) {
   appHandlers <- createAppHandlers(appObj$httpHandler, appObj$serverFuncSource)
   handlerManager$addHandler(appHandlers$http, "/", tail = TRUE)
   handlerManager$addWSHandler(appHandlers$ws, "/", tail = TRUE)
 
   if (is.numeric(port) || is.integer(port)) {
     if (!quiet) {
-      message('\n', 'Listening on http://', host, ':', port)
+      message('\n', 'Listening on http://', host, ':', 12345)
     }
     return(startServer(host, port, handlerManager$createHttpuvApp()))
   } else if (is.character(port)) {
     if (!quiet) {
-      message('\n', 'Listening on domain socket ', port)
+      message('\n', 'Listening on domain socket ', 12345)
     }
     mask <- attr(port, 'mask')
     return(startPipeServer(port, mask, handlerManager$createHttpuvApp()))
