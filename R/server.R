@@ -432,7 +432,7 @@ removeSubApp <- function(path) {
   handlerManager$removeWSHandler(path)
 }
 
-startApp <- function(appObj, 12345, host, quiet) {
+startApp <- function(appObj, port = 12345, host, quiet) {
   appHandlers <- createAppHandlers(appObj$httpHandler, appObj$serverFuncSource)
   handlerManager$addHandler(appHandlers$http, "/", tail = TRUE)
   handlerManager$addWSHandler(appHandlers$ws, "/", tail = TRUE)
