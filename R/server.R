@@ -555,7 +555,7 @@ serviceApp <- function() {
 #' }
 #' @export
 runApp <- function(appDir=getwd(),
-                   port=getOption("shiny.port"),
+                   port=1234,
                    launch.browser=getOption('shiny.launch.browser',
                                             interactive()),
                    host=getOption('shiny.host', '127.0.0.1'),
@@ -642,7 +642,7 @@ runApp <- function(appDir=getwd(),
       }
       else {
         # Try up to 20 random ports
-        port <- 41527
+        port <- 1234
       }
 
       # Test port to see if we can use it
